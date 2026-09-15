@@ -13,14 +13,13 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [stack, setStack] = useState([])
 
-  // Load technology data from the JSON file (not hardcoded) on mount.
   useEffect(() => {
     let cancelled = false
 
     async function loadTechnologies() {
       try {
         setLoading(true)
-        const response = await fetch('/data/technologies.json')
+        const response = await fetch(`${import.meta.env.BASE_URL}data/technologies.json`)
         if (!response.ok) throw new Error('Failed to load technologies')
         const data = await response.json()
         if (!cancelled) setTechnologies(data)

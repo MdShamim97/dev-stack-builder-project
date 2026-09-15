@@ -1,3 +1,4 @@
+
 export default function Hero() {
   return (
     <section id="home" className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pt-20">
